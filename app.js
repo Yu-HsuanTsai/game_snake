@@ -1,12 +1,11 @@
 const canvas = document.getElementById("myCanvas");
 const ctx = canvas.getContext("2d");
-//getContext()method會回傳一個canvas的drawing context
-//drawing context可以用來在canvas內畫圖
+
 const unit = 20;
 const row = canvas.height / unit;
 const column = canvas.width / unit;
 
-let snake = []; //array中的每個元素，都是一個物件
+let snake = [];
 function createSnake() {
   snake[0] = {
     x: 80,
@@ -25,7 +24,6 @@ function createSnake() {
     y: 0,
   };
 }
-//物件的工作是，儲存身體的x y座標
 
 class Fruit {
   constructor() {
@@ -100,7 +98,6 @@ function draw() {
     }
   }
 
-  //背景全設定為黑色
   ctx.fillStyle = "black";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
@@ -127,13 +124,11 @@ function draw() {
       snake[i].y = 0;
     }
 
-    //(x,y,width,height)
     ctx.fillRect(snake[i].x, snake[i].y, unit, unit);
     ctx.strokeRect(snake[i].x, snake[i].y, unit, unit);
   }
 
-  //以目前的d變數，來決定蛇的下一幀數要放在哪個座標
-  let snakeX = snake[0].x; //snake is a object,but snake[0]is a number
+  let snakeX = snake[0].x;
   let snakeY = snake[0].y;
   if (d == "Left") {
     snakeX -= unit;
