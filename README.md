@@ -4,4 +4,4 @@
 
 ## Demo
 
-![](game_snake.gif)
+<img src="./game_snake.gif" width="300" height="200">
